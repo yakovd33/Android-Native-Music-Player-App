@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="android.example.com.musicplayer.songDetails"
+    >
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/default_cover"
+        android:layout_marginTop="40dp"
+        android:id="@+id/songDetsCover"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:id="@+id/songName"
+        android:layout_below="@id/songDetsCover"
+        android:text="Song name"
+        android:layout_centerHorizontal="true"
+        android:textSize="23dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#535353"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:id="@+id/songArtist"
+        android:layout_below="@id/songName"
+        android:text="Song artist"
+        android:layout_centerHorizontal="true"
+    />
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/favCurSong"
+        android:src="@drawable/heart"
+        android:layout_below="@+id/songArtist"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitCenter"
+        android:background="@null"
+        android:tag="off"
+        android:padding="5dp"
+    />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/songDetsSeekWrap"
+        android:layout_below="@+id/favCurSong"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:weightSum="100">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/songDetsCurDur"
+            android:text="0:00"
+            android:layout_weight="15"
+            android:textAlignment="textEnd"
+            />
+        <SeekBar
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/songSeek"
+            android:layout_weight="70"
+            android:layout_gravity="center_horizontal"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/songDetsTotalDur"
+            android:text="0:00"
+            android:layout_weight="15"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/controlBtns"
+        android:layout_below="@+id/songDetsSeekWrap"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+    >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Previous"
+            android:id="@+id/songDetsPrevBtn"
+        />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pause"
+            android:id="@+id/songDetsPlayBtn"
+        />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:id="@+id/songDetsNextBtn"
+        />
+    </LinearLayout>
+</RelativeLayout>

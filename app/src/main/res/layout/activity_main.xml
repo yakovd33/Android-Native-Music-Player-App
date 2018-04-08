@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="android.example.com.musicplayer.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="100"
+        android:orientation="vertical"
+    >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="90"
+            android:id="@+id/musicListWrap"
+        >
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/mainMusicListView"
+            >
+            </ListView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/underFlow"
+            android:layout_weight="10"
+        >
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:orientation="horizontal"
+                 android:weightSum="100"
+                 android:background="@color/bluez"
+             >
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                >
+                     <ImageButton
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:id="@+id/udnerFlowSongCover"
+                         android:src="@drawable/default_cover"
+                         android:scaleType="centerCrop"
+                         android:background="@color/bluez"
+                     />
+                </RelativeLayout>
+
+                 <RelativeLayout
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="50"
+                     android:gravity="center_vertical"
+                     >
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/underFlowSongName"
+                        android:text="Song name"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:textSize="18dp"
+                        android:textColor="#fff"
+                    />
+
+                     <TextView
+                         android:layout_width="fill_parent"
+                         android:layout_height="wrap_content"
+                         android:id="@+id/underFlowArtist"
+                         android:layout_below="@+id/underFlowSongName"
+                         android:text="Song artist"
+                         android:maxLines="1"
+                         android:paddingLeft="10dp"
+                         android:textSize="14dp"
+                         android:textColor="#fff"
+                     />
+                 </RelativeLayout>
+
+                 <LinearLayout
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="30"
+                     android:gravity="center_vertical"
+                 >
+                     <Button
+                         android:layout_width="wrap_content"
+                         android:layout_height="match_parent"
+                         android:id="@+id/playPauseBtn"
+                         android:text="Pause"
+                         android:textAllCaps="false"
+                     />
+                 </LinearLayout>
+             </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
